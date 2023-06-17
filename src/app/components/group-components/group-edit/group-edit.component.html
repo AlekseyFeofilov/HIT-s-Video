@@ -1,0 +1,63 @@
+<div>
+  <div class="title">Администраторы</div>
+  <div class="member" *ngFor="let administrator of administrators">
+    <div>{{administrator.user.vkId}}</div>
+    <div *ngIf="myId === administrator.user.id">(me)</div>
+  </div>
+
+  <div class="title">Участники</div>
+  <div class="member" *ngFor="let member of members">
+    <div>{{member.user.vkId}}</div>
+    <div *ngIf="myId === member.user.id">(me)</div>
+  </div>
+
+  <div *ngIf="isAdmin">
+    <div class="title">Приглашения</div>
+    <div class="invitation" *ngFor="let invitation of invitations">
+      <div>
+        Код: {{invitation.code}},
+      </div>
+
+      <div *ngIf="invitation.usageLimit === 0">
+        &nbsp;безимитный,
+      </div>
+      <div *ngIf="invitation.usageLimit !== 0">
+        &nbsp;использовано {{invitation.usages}} из {{invitation.usageLimit}},
+      </div>
+
+      <div *ngIf="invitation.expirationDateTime === null">
+        &nbsp;бессрочный
+      </div>
+      <div *ngIf="invitation.expirationDateTime !== null">
+        &nbsp;истекает после {{invitation.expirationDateTime}}
+      </div>
+    </div>
+
+    <form (ngSubmit)="addInvitation()" #videoForm="ngForm">
+      <div class="form-group">
+        <label for="usageLimit">Лимит использований</label>
+        <input type="number" class="form-control" id="usageLimit"
+               [(ngModel)]="usageLimit" name="usageLimit">
+      </div>
+
+      <div class="form-group">
+        <label for="dateExpiration">Дата истечения</label>
+        <input class="form-control" id="dateExpiration" (click)="ngbDatepicker.toggle()"
+               placeholder="yyyy-mm-dd"
+               [(ngModel)]="dateExpiration" name="dateExpiration"
+               ngbDatepicker
+               #ngbDatepicker="ngbDatepicker"
+               #videoDateString="ngModel">
+        <div [hidden]="videoDateString.valid || videoDateString.pristine"
+             class="alert alert-danger">
+          Формат даты: yyyy-mm-dd
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default addNewVideo"
+              [disabled]="!videoForm.form.valid">
+        Добавить новое приглашение
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div>
+  <div class="groups-name">
+    Мои группы
+  </div>
+  <div class="groups">
+    <div *ngFor="let myGroup of myGroups">
+      <a class="big-black-link" [routerLink]="[myGroup.id]">
+        {{myGroup.name}}
+      </a>
+      <img class="edit-button" ngSrc="assets/images/edit.png" alt="edit" height="20" width="20"
+           [routerLink]="['edit', myGroup.id]">
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="groups-name">
+    Группы, в которых я состою
+  </div>
+  <div class="groups">
+    <a class="big-black-link" *ngFor="let participatingGroup of participatingGroups"
+       [routerLink]="[participatingGroup.id]">
+      {{participatingGroup.name}}
+    </a>
+  </div>
+</div>
+
+<form (ngSubmit)="joinGroup()" #videoForm="ngForm">
+  <div class="form-group">
+    <label for="invitationCode">Код приглашения</label>
+    <input type="text" class="form-control" id="invitationCode"
+           required
+           [(ngModel)]="invitationCode" name="invitationCode"
+           #name="ngModel">
+    <div [hidden]="name.valid || name.pristine"
+         class="alert alert-danger">
+      Код приглашения - обязательное поле
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-default addNewVideo"
+          [disabled]="!videoForm.form.valid">
+    Вступить в новую группу
+  </button>
+</form>

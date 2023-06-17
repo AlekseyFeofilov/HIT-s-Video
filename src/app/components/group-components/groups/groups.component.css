@@ -1,0 +1,13 @@
+.groups-name {
+  border-bottom: #bbbbbb 2px solid;
+  margin-top: 16px;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-button:hover {
+  background-color: #bbbbbb;
+}

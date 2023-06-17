@@ -1,0 +1,10 @@
+.big-black-link {
+  color: black;
+  font-size: 24px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+big-black-link:hover {
+  color: gray;
+}

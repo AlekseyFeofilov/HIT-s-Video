@@ -1,0 +1,46 @@
+.videoWall {
+  display: block;
+}
+
+.videoPost {
+  border-radius: 25px;
+  background-color: #bbbbbb;
+  margin: 16px;
+  padding: 8px;
+}
+
+.videoInfo {
+  padding: 8px;
+}
+
+.tagList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.values {
+  margin: 6px;
+  padding: 6px;
+  border-radius: 25px;
+}
+
+.addNewVideo {
+  margin: 16px;
+  padding: 8px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  background-color: #bbbbbb;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.no-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

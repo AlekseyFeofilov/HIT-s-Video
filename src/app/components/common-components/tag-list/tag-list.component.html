@@ -1,0 +1,8 @@
+<div class="tagList">
+  <div class="tag" *ngFor="let tag of tags">
+    <div class="values" *ngFor="let value of tag.values"
+         [style.background-color]="HashHelper.stringToColour(tag.name)">
+      {{tag.name}}: {{value}}
+    </div>
+  </div>
+</div>

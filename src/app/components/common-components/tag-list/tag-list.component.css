@@ -1,0 +1,18 @@
+.tagList {
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.values {
+  margin: 6px;
+  padding: 6px;
+  border-radius: 25px;
+}
+
+.tag {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

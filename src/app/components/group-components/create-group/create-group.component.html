@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" #videoForm="ngForm">
+  <div class="form-group">
+    <label for="name">Название</label>
+    <input type="text" class="form-control" id="name"
+           required
+           [(ngModel)]="groupCreate.name" name="name"
+           #name="ngModel">
+    <div [hidden]="name.valid || name.pristine"
+         class="alert alert-danger">
+      Имя - обязательное поле
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-default addNewVideo"
+          [disabled]="!videoForm.form.valid">
+    Создать группу
+  </button>
+
+</form>

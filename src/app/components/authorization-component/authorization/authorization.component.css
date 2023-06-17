@@ -1,0 +1,20 @@
+.note-for-fan {
+  font-size: 8px;
+}
+
+.authorization-button {
+  margin: auto;
+  border-radius: 25px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #3375F7;
+  color: white;
+  font-size: 46px;
+}
+
+.authorization-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

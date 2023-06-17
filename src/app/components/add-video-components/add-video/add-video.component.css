@@ -1,0 +1,32 @@
+.values {
+  background-color: #bbbbbb;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.tagValues {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tagValue {
+  background-color: #42A94855;
+  margin: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 25px;
+}
+
+.addNewVideo {
+  width: 100%;
+  margin: 16px;
+  padding: 8px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  border-radius: 25px;
+  font-size: 24px;
+}

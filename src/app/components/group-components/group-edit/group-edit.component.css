@@ -1,0 +1,13 @@
+.title {
+  border-bottom: #bbbbbb 2px solid;
+  margin-top: 16px;
+}
+
+.member {
+  display: flex;
+
+}
+
+.invitation {
+  display: flex;
+}

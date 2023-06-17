@@ -1,0 +1,16 @@
+<div class="videoPost">
+  <div class="videoInfo">
+    <p>Название: {{video!.title}}</p>
+    <p>Предмет: {{video!.subject.name}}</p>
+    <p>Дата записи: {{video!.recordingDateTime | date: 'dd/MM/yyyy'}}</p>
+    <p>Описание: {{video!.description}}</p>
+    <app-tag-list [tags]="video!.tags"></app-tag-list>
+  </div>
+
+  <app-vk-video-widget [url]="video!.playerUrl"></app-vk-video-widget>
+
+  <details>
+    <summary>Субтитры</summary>
+    <p>{{subtitles}}</p>
+  </details>
+</div>

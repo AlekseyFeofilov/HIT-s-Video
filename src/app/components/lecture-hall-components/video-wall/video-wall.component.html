@@ -1,0 +1,23 @@
+<div class="videoWall">
+  <app-search-field (searchEvent)="searchGroup($event)"></app-search-field>
+
+  <div class="addNewVideo" [routerLink]="['/video']">
+    + Добавить новое видео
+  </div>
+
+  <div class="no-content" *ngIf="videos.length === 0">
+    <img ngSrc="../../../../assets/images/no-content.jpg" alt="No content (" height="375" width="500">
+  </div>
+
+  <div *ngIf="videos.length !== 0">
+    <div class="videoPost" *ngFor="let video of videos">
+      <div class="videoInfo" [routerLink]="['/video', video.id]">
+        <p>{{video.title}}</p>
+        <p>Предмет: {{video.subject.name}}</p>
+        <app-tag-list [tags]="video.tags"></app-tag-list>
+      </div>
+
+      <app-vk-video-widget [url]="video.playerUrl"></app-vk-video-widget>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+  <div style="display: block">
+    <div *ngFor="let tag of tags">
+      <div>
+        <details>
+          <summary>{{tag.name}}</summary>
+          <div *ngFor="let value of tag.values">
+            <input type="checkbox" id="{{value}}" name="{{value}}" (click)="changeTagValueStatus(tag, value)">
+            <label for="{{value}}">{{value}}</label>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div style="border-top: 2px solid #bbbbbb; margin-top: 56px">
+      <details>
+        <summary>Предметы</summary>
+        <div *ngFor="let subject of subjects">
+          <input type="checkbox" id="{{subject.id}}" name="{{subject.id}}" (click)="changeSubjectStatus(subject)">
+          <label for="{{subject.id}}">{{subject.name}}</label>
+        </div>
+        <button [routerLink]="['subject']">+ добавить предмет</button>
+      </details>
+    </div>
+    <button (click)="applyFilters()">Применить фильтр</button>
+  </div>
+

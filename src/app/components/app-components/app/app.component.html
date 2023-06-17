@@ -1,0 +1,17 @@
+<main>
+  <header>
+    <a class="big-black-link" [routerLink]="['']">
+      <img class="brand-logo" src="../../../../assets/images/logo.jpg" alt="logo" aria-hidden="true">
+    </a>
+    <a class="big-black-link" [routerLink]="['']">
+      <div>Главная</div>
+    </a>
+    <a class="big-black-link" [routerLink]="['group']">
+      <div>Группы</div>
+    </a>
+  </header>
+
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</main>

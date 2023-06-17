@@ -1,0 +1,33 @@
+<div class="sidebar-opener" (click)="sidebarShow = !sidebarShow">
+  Выбрать группу
+</div>
+
+<div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+  <div
+    class="sidebar-close"
+    (click)="sidebarShow = !sidebarShow"
+  >
+    <---
+  </div>
+  <div>
+    <h2>Группы</h2>
+    <div *ngIf="currentGroup !== null"
+         style="border-bottom: 4px solid #bbbbbb"
+         (click)="setParentGroup()">
+      <-- {{currentGroup.name}}
+    </div>
+
+
+    <div class="create-group-button-container">
+      <div class="empty-div"></div>
+      <button class="create-group-button" [routerLink]="['group/new']">Создать группу</button>
+    </div>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="sidebar-content-item" *ngFor="let group of currentSubgroups"
+         (click)="setGroup(group.id)">
+      {{group.name}}
+    </div>
+  </div>
+</div>

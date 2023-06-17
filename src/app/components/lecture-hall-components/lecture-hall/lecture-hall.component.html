@@ -1,0 +1,11 @@
+<app-sidebar (selectGroupEvent)="setGroupVideos($event)"></app-sidebar>
+
+<div *ngIf="group !== null" class="wall">
+  <app-video-wall [group]="group" [tagFilter]="tagFilter" [subjectFilter]="subjectFilter"></app-video-wall>
+  <app-filter [groupId]="group.id" (applyFilterEvent)="applyFilter($event)"></app-filter>
+</div>
+
+<div class="no-group-content" *ngIf="group === null">
+  Выберите группу
+</div>
+
